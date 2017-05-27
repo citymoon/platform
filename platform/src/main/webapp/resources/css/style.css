@@ -1,0 +1,412 @@
+/*index样式*/ 
+body{ background: #f7f7f7; overflow: auto;}
+a{ color:#304456;} 
+a:link{color:#2f4050; text-decoration:none;}	
+a:visited{color:#2f4050;text-decoration:none;}
+a:hover{color:#18a689; text-decoration:none;}
+a:active{color:#2f4050;}
+ul{ padding: 0; margin: 0;}
+ul li{ padding: 0; margin: 0; list-style: none;}
+
+#wrapper{
+	width: 100%; 
+	overflow:hidden;
+	color: #35495d;
+}
+
+    	
+/*头部导航*/ 
+.x-nav i{ font-size: 18px; color: #676a6c;}	
+
+.x-nav .badge{
+	position: absolute; 
+	top: 6px; 
+	right: 8px;
+	font-size: 10px;
+	font-weight: 400;
+	line-height: 13px;
+	padding: 2px 6px;}
+	
+.x-nav img{ width:30px; height: 30px; border-radius: 50%;}
+.dropdown-menu{ font-size: 12px;}
+.text-muted{ color: #888;}
+.dropdown-alert{ width: 300px; padding: 10px;}
+.dropdown-alert i{font-size: 14px;}
+.dropdown-user{padding: 10px;}
+.dropdown-user i{font-size: 14px; padding-right: 10px;}
+
+.toggle{ float: left; margin: 0; padding-top: 16px;}
+.toggle a{ padding: 16px;}
+.toggle a i{ font-size: 26px; color: #5a738e;}
+	
+
+    	
+#mian{ 
+	margin:70px 15px 15px 15px;}
+
+
+/*面板*/
+.x_panel{ 
+	width: 100%;
+	border: 1px solid #e6e9ed;
+	background: #FFFFFF;
+	display: inline-block;
+	opacity:1;
+	transition:all .2s ease;
+	margin-bottom: 10px;
+	padding: 15px;
+}	
+.x_title{
+	border-bottom: 2px solid #e6e9ed; 
+	padding:0 0 5px 0; }
+
+.x_title h3{ 
+	margin:5px 0; 
+	float: left; 
+	display: block; 
+	font-size: 18px; 
+	font-weight: 400;
+	color: #35495d;}	
+.panel-toolbox{min-width: 50px;}
+.panel-toolbox >li{ float: left; cursor: pointer;}
+.panel-toolbox >li>a{ font-size: 14px; color: #c5c7cb; padding:0 3px;}
+
+.x_content{ 
+	padding:15px 10px 0 10px;
+	float: left;
+	clear: both;
+	width: 100%;
+}
+
+/*h标题字号*/
+.h1{font-size: 24px; color: #5a738e;}
+.h2{font-size: 22px; color: #5a738e;}
+.h3{font-size: 18px; color: #5a738e;}
+.h4{font-size: 16px; color: #5a738e;}
+.h5{font-size: 14px; color: #5a738e;}
+.h6{font-size: 12px; color: #5a738e;}
+
+
+
+/*按钮颜色*/
+.x-btn{ min-width:120px;}
+.x_contents .btn{ margin-bottom: 5px;}
+
+
+.btn-primary{
+	background: #1ab394; 
+	border: 1px solid #1ab394; 
+	color: #FFFFFF; 
+	border-radius: 3px;}
+	
+.btn-primary:hover{
+	background:#18a689;
+	border: 1px solid #18a689; 
+	color: #FFFFFF; 
+	border-radius: 3px;}
+
+	
+	
+.btn-success{
+	background: #1c84c6; 
+	border: 1px solid #1c84c6;
+	color: #FFFFFF; 
+	border-radius: 3px; }
+	
+.btn-success:hover{
+	background:#1a7bb9;
+	border: 1px solid #1a7bb9; 
+	color: #FFFFFF; 
+	border-radius: 3px; }
+	
+.btn-info{
+	background: #23c6c8; 
+	border: 1px solid #23c6c8;
+	color: #FFFFFF; 
+	border-radius: 3px;}
+	
+.btn-info:hover{
+	background:#21b9bb;
+	border: 1px solid #21b9bb; 
+	color: #FFFFFF; 
+	border-radius: 3px; }
+	
+.btn-warning{
+	background: #f8ac59; 
+	border: 1px solid #f8ac59; 
+	color: #FFFFFF; 
+	border-radius: 3px; }
+	
+.btn-warning:hover{
+	background:#f7a54a;
+	border: 1px solid #f7a54a; 
+	color: #FFFFFF; 
+	border-radius: 3px; }
+	
+.btn-danger{
+	background: #ed5565; 
+	border: 1px solid #ed5565;
+	color: #FFFFFF; 
+	border-radius: 3px; }
+	
+.btn-danger:hover{
+	background:#ec4758;
+	border: 1px solid #ec4758; 
+	color: #FFFFFF; 
+	border-radius: 3px; }
+	
+	
+.btn-link{
+	border:none;
+	background: #FFFFFF; 
+	color: #676a6c; 
+	border-radius: 3px; 
+}
+	
+.btn-link:hover{
+	border:none;
+	background: #FFFFFF; 
+	color: #1ab394; 
+	border-radius: 3px;
+	text-decoration:none;}
+
+	
+/*线性按钮*/
+.btn-outline{ background-color: transparent; color: inherit;}
+	
+
+/*表单横线*/
+.hr-line-dashed{
+	border-top: 1px dashed #e7eaec;
+	height: 1px;
+	margin: 20px;}
+	
+	
+	
+/*单选和复选自定义样式*/	
+.demo--label{ margin-left: -35px;}
+.demo--radio{display:none}
+.radio-inline{margin-left: -80px;}
+
+.demo--radioInput{
+	background: url(../images/default/ridoa.png) 0 -125px no-repeat;	
+	display:inline-block;	
+	height:20px;	
+	margin-right:8px;	
+	margin-top:-1px;	
+	vertical-align:middle;	
+	width:20px;	
+	line-height:1;}
+	
+.demo--radioInput-disabled{
+	background: url(../images/default/ridoa.png) 0 -150px no-repeat;	
+	display:inline-block;	
+	height:20px;	
+	margin-right:8px;	
+	margin-top:-1px;	
+	vertical-align:middle;	
+	width:20px;	
+	line-height:1;}
+	
+.demo--radioInput-disabled-checked{
+	background: url(../images/default/ridoa.png) 0 -175px no-repeat;	
+	display:inline-block;	
+	height:20px;	
+	margin-right:8px;	
+	margin-top:-1px;	
+	vertical-align:middle;	
+	width:20px;	
+	line-height:1;}
+	
+
+.demo--radio:checked + .demo--radioInput:after{
+	background: url(../images/default/ridoa.png) 0 -100px no-repeat;
+	content:"";
+	display:inline-block;
+	height:20px;
+	width:20px;
+	}
+
+.demo--checkbox{display:none}
+	
+.demo--checkboxInput{
+	background: url(../images/default/ridoa.png) 0 -25px no-repeat;	
+	display:inline-block;	
+	height:20px;	
+	margin-right:8px;	
+	margin-top:-1px;	
+	vertical-align:middle;	
+	width:20px;	
+	line-height:1;}
+	
+	.demo--checkbox-disabled{
+	background: url(../images/default/ridoa.png) 0 -50px no-repeat;	
+	display:inline-block;	
+	height:20px;	
+	margin-right:8px;	
+	margin-top:-1px;	
+	vertical-align:middle;	
+	width:20px;	
+	line-height:1;}
+	
+.demo--checkbox-disabled-Checked{
+	background: url(../images/default/ridoa.png) 0 -75px no-repeat;	
+	display:inline-block;	
+	height:20px;	
+	margin-right:8px;	
+	margin-top:-1px;	
+	vertical-align:middle;	
+	width:20px;	
+	line-height:1;}
+	
+	
+.demo--checkbox:checked + .demo--checkboxInput:after{
+	background: url(../images/default/ridoa.png) 0 0px no-repeat;
+	content:"";
+	display:inline-block;
+	height:20px;
+	width:20px;
+	}
+	
+
+	
+
+
+/*选项卡*/
+.pane-body{
+	background: #FFFFFF; 
+	padding: 20px; 
+	border: 1px solid #e7eaec;
+	border-top:none;
+	position: relative;}
+	
+	
+/*数据表格*/	
+.datetable{}
+.datetable label{ font-weight: normal;}
+
+
+
+
+
+/*index配色色块*/
+.pallete{ margin-bottom: 15px; }
+.pallete-item{
+	padding:10px 0; 
+	margin:0 20px; 
+	text-align: center; 
+	color: #FFFFFF; }
+	
+.pallete-item2{
+	padding:29px 0; 
+	margin:0 20px; 
+	text-align: center; 
+	color: #FFFFFF; }
+	
+.pallete-border{
+	border:1px solid #e6e9ed;
+	color: #293846;}
+
+/*圆角*/
+.circle{ border-radius: 3px; margin-bottom: 1px;}
+	
+
+
+
+
+/*左右标题*/
+.page-title{ height: 65px; padding: 10px 0;}
+.left-title{ width: 45%; float: left;}
+.right-title{ width: 55%; float: right; text-align: right;}
+
+
+/*表格样式*/
+.x-table{ border: 1px solid #e4e4e4;}
+.x-table-heading{ background: #405468; color: #ecf0f1;}
+
+
+.avatar{
+	border: 1px solid #e6e6e6;
+	border-radius: 50%; 
+	width: 32px; 
+	height: 32px;
+	display: inline-block;}
+	
+.progress_sm{ height: 10px; margin: 0; !important}
+
+
+
+/*徽章 标签*/
+.badge-primary, .label-primary{background-color: #1ab394; color: #FFFFFF;}
+.badge-info, .label-info{background-color: #23c6c8; color: #FFFFFF;}
+.badge-success , .label-success{background-color: #1c84c6; color: #FFFFFF;}
+.badge-warning , .label-warning{background-color: #f8ac59; color: #FFFFFF;}
+.badge-danger, .label-danger{background-color: #ed5565; color: #FFFFFF;}
+
+
+
+/*page页面*/
+.error{ margin: 30px 0;}
+.error-number{ font-size: 120px; padding: 50px 0 0px 0;}
+
+/*logoin登录页面*/
+.login-wrapper{ margin: 10% auto 0; max-width: 350px;}
+.login-name{ font-size: 60px; font-weight: bold; font-family: verdana; color: #1ab394;}
+
+
+
+/*首页的进程*/
+.w_left{ float: left; width: 25%;}
+.w_center{float: left; width: 55%;}
+.w_right{float: left; width: 20%; text-align: right; font-size: 20px;}
+.bg-green{
+	background: #1ABB9C !important;
+    border: 1px solid #1ABB9C !important;
+    color: #fff;}
+.progress{ border-radius: 0;}
+
+
+/*验证表单步骤*/
+.wizard_steps{
+	display: table;
+	width: 100%;
+	list-style: none;
+	position:relative;
+	margin: 0 0 20px;
+	text-align: center;}
+	
+ul.wizard_steps li a::before{
+	content: ""; 
+	background: #ccc; 
+	top: 20px; 
+	width: 100%; 
+	height: 4px; 
+	position: absolute;
+	z-index:4;
+	left:0;}	
+
+ul.wizard_steps li{ display: table-cell; }
+
+ul.wizard_steps li a.selected::before{background: #2a3f54;}
+ul.wizard_steps li:first-child a::before{left:50%;}
+ul.wizard_steps li:last-child a::before{right:50%; width: 50%; left: auto;}
+ul.wizard_steps li a.selected::before{background: #2a3f54; color: #FFFFFF;}
+ul.wizard_steps li a.selected .step_no{ background: #2a3f54;}
+ul.wizard_steps li a .step_no{
+	width: 40px; 
+	height: 40px;
+	line-height: 40px;
+	border-radius: 50%;
+	font-size: 16px;
+	text-align: center;
+	display: block;
+	background: #cccccc;
+	color: #fff;
+	margin: 0 auto 5px;
+	position: relative;
+	z-index: 5;}
+
+ul.wizard_steps li a,ul.wizard_steps li:hover{ display: block; position: relative; color: #333;}
+
+
+

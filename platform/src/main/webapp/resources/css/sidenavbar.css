@@ -1,0 +1,235 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;}
+
+body {}   
+
+
+.navbar-static-side{} 
+
+@media screen and (min-width:768px){   
+    
+    .navbar-static-side{
+    	background: #2a3f54; 
+    	width: 230px; 
+    	height:100%;
+    	z-index: 2001; 
+    	display: block;
+    	color: #FFFFFF; 
+    	position: fixed;
+    	overflow: auto;}
+    	
+    /*logo*/
+	.brand{ 
+	   	padding:20px 5px 25px 5px;
+	    font-weight: bold; 
+	   	font-size: 20px; 
+	   	color: #ecf0f1 ;}
+   	   	
+	.accordion {
+	 	width: 100%;
+	 	max-width: 230px;
+	 	margin:5px auto 20px;
+	 	background: #2a3f54;
+	 	}
+
+	.accordion .link {
+		cursor: pointer;
+		display: block;
+		padding: 14px 15px 14px 40px;
+		color: #a7b1c2;
+		font-size: 14px;
+		font-weight: 600;
+		position: relative;
+		-webkit-transition: all 0.4s ease;
+		-o-transition: all 0.4s ease;
+		transition: all 0.4s ease;
+		border-top: 1px solid #30475d;}
+	
+	.accordion li:last-child .link {border-bottom: 0;
+	}
+	.accordion li i {
+		position: absolute;
+		top: 16px;
+		left: 15px;
+		font-size: 16px;
+		color: #a7b1c2;
+		-webkit-transition: all 0.4s ease;
+		-o-transition: all 0.4s ease;
+		transition: all 0.4s ease;
+		}
+
+	.accordion li i.fa-chevron-down {
+		right: 16px;
+		left: auto;
+		font-size: 10px;
+		}
+	
+	.accordion li.open .link {color: #1abb9c;
+	
+		border-top: 1px solid #37526c;
+		border-bottom: 1px solid #1f2f3f;
+		box-shadow: 1px 1px 1px 1px #25384b;}
+	
+	.accordion li.open i {color: #1ab394;}
+	.accordion li.open i.fa-chevron-down {
+		-webkit-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+		-o-transform: rotate(180deg);
+		transform: rotate(180deg);}
+	
+	/*** Submenu -----------------------------*/
+	 .submenu {
+	 	display: none;
+	 	background: #35495d;
+	 	font-size: 14px; }
+	
+	 .submenu li {border-bottom: 1px solid #2a3f54; }
+	
+	 .submenu a {
+	 	display: block;
+	 	text-decoration: none;
+	 	color: #d9d9d9;
+	 	padding: 10px;
+	 	padding-left: 42px;
+	 	-webkit-transition: all 0.25s ease;
+	 	-o-transition: all 0.25s ease;
+	 	transition: all 0.25s ease; }
+	
+	 .submenu a:hover {
+	 	background: #2a3f54;
+	 	color: #FFF; }
+	 
+	 .right-box{ 
+	    	margin: 0 0 0 230px;
+	    	position: inherit;}
+	    	
+	 .x-nav{
+		margin-left: 230px; 
+		padding: 0 20px 0 0; 
+		background: #ededed; 
+		border-bottom: 1px solid #d9dee4;
+		font-family: "微软雅黑"; 
+		height:56px;}
+	    }
+	 
+	 
+ 
+ 
+@media screen and (max-width:767px) {
+    	
+        
+    .navbar-static-side{
+    	background: #2a3f54; 
+    	width: 80px; 
+    	height:100%;
+    	z-index: 2001; 
+    	display: block;
+    	color: #FFFFFF; 
+    	position: fixed;
+    	overflow: auto; 
+    	}
+    	
+    .right-box{ 
+    	margin: 0 0 0 80px;
+    	position: inherit;}
+    	
+    	
+    	/*logo*/
+    .brand{
+	display: none;
+   	padding:8px 5px 5px 5px;
+    font-weight: bold; 
+   	font-size: 20px; 
+   	color: #ecf0f1 ;}
+   	   	
+ .accordion {
+ 	width: 100%;
+ 	max-width: 80px;
+ 	margin:5px auto 20px;
+ 	background: #2d4257;
+ 	}
+
+.accordion .link {
+	cursor: pointer;
+	display: block;
+	padding: 12px 10px 12px 27px;
+	color: #a7b1c2;
+	font-size: 14px;
+	font-weight: 700;
+	position: relative;
+	-webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	border-top: 1px solid #4d6a87;
+	border-bottom: 1px solid #1f2f3f;
+	box-shadow: 1px 1px 1px 1px #25384b;}
+
+.accordion li:last-child .link {border-bottom: 0;}
+
+.accordion li i {
+	position: absolute;
+	top: 15px;
+	left:8px;
+	font-size: 14px;
+	color: #a7b1c2;
+	-webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;}
+
+.accordion li i.fa-chevron-down {
+	right: 8px;
+	left: auto;
+	font-size: 10px;
+	display: none;}
+
+.accordion li.open .link {color: #1ab394;}
+
+.accordion li.open i {color: #1ab394;}
+.accordion li.open i.fa-chevron-down {
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);}
+
+/**
+ * Submenu
+ -----------------------------*/
+ .submenu {
+ 	display: none;
+ 	background: #35495d;
+ 	font-size: 14px; }
+
+ .submenu li {border-bottom: 1px solid #2a3f54; }
+
+ .submenu a {
+ 	display: block;
+ 	text-decoration: none;
+ 	color: #d9d9d9;
+ 	padding: 10px;
+ 	padding-left: 10px;
+ 	-webkit-transition: all 0.25s ease;
+ 	-o-transition: all 0.25s ease;
+ 	transition: all 0.25s ease; }
+
+ .submenu a:hover {
+ 	background: #2a3f54;
+ 	color: #FFF; }
+ 	
+ .x-nav{
+	margin-left: 80px; 
+	padding: 0 20px 0 0; 
+	background: #ededed; 
+	border-bottom: 1px solid #d9dee4;
+	font-family: "微软雅黑"; 
+	height:55px;
+	display: none;
+	}
+
+}
+
+
+  
