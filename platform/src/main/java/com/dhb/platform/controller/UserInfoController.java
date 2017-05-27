@@ -96,9 +96,9 @@ public class UserInfoController {
     
     @ResponseBody
     @RequestMapping("/getjson")
-    public User getUserToJson(){
-        User user = userInfoService.loginUser("dhb", "1111");
-        return user;
+    public List<JbdpUser> getUserToJson(){
+        List<JbdpUser> users = (List<JbdpUser>) userInfoService.getAllUsersByMybatis();
+        return users;
     }
     
     @RequestMapping("/delete")
