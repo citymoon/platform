@@ -27,7 +27,7 @@
                     <button type="submit" class="btn btn-primary btn-block">登录</button>
                 </div>
             </form>
-            <p class="text-center">
+            <p class="text-center" style="color:#f7a54a">
                 ${model.error }
             </p>
         </div>

@@ -33,7 +33,7 @@ public class UserInfoController {
     HttpServletRequest request;
 
     String loginPageUrl = "login";
-    String successPageUrl = "success";
+    String successPageUrl = "moduleIndex";
     String addUrl = "user/adduser";
     String upUrl = "user/upduser";
     

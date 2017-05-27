@@ -37,7 +37,7 @@ public class LoginController {
 	@RequestMapping("/loginto")
 	public ModelAndView valideLogin(Model model){
 		String loginPageUrl = "index";
-		String successPageUrl = "success";
+		String successPageUrl = "moduleIndex";
 		
 		String uname = request.getParameter("userId");
 		String upasswd = request.getParameter("password");
