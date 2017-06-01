@@ -7,20 +7,14 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.http.MediaType;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dhb.platform.entity.JbdpUser;
-import com.dhb.platform.entity.User;
 import com.dhb.platform.service.IUserInfoService;
-
-import org.apache.commons.lang.StringUtils;
 
 @Controller
 @RequestMapping("/user")

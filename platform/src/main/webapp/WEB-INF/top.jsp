@@ -76,7 +76,7 @@
             <li><a href="#">联系我们</a></li>
             <li><a href="#">信箱</a></li>
             <li class="divider"></li>
-            <li><a href="#">安全退出</a></li>
+            <li><a href="${ctx}/index.jsp">安全退出</a></li>
           </ul>
         </li>
       </ul>          
