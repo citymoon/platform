@@ -23,16 +23,16 @@ public class LoginController {
 	@Resource
 	IUserInfoService service;
 
-	@RequestMapping("/process")
-	public ModelAndView processLogin() {
-
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("message", "welcome,Hello World...............!");
-		// 设置逻辑视图名，视图解析器会根据该名字解析到具体的视图页面
-		mv.setViewName("success");
-		return mv;
-
-	}
+//	@RequestMapping("/process")
+//	public ModelAndView processLogin() {
+//
+//		ModelAndView mv = new ModelAndView();
+//		mv.addObject("message", "welcome,Hello World...............!");
+//		// 设置逻辑视图名，视图解析器会根据该名字解析到具体的视图页面
+//		mv.setViewName("success");
+//		return mv;
+//
+//	}
 	
 	@RequestMapping("/loginto")
 	public ModelAndView valideLogin(Model model){
