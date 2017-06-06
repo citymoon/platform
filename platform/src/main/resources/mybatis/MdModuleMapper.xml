@@ -5,7 +5,7 @@
     <result column="ROW_ID" jdbcType="DECIMAL" property="rowId" />
     <result column="MD_NAME" jdbcType="VARCHAR" property="mdName" />
     <result column="MD_CODE" jdbcType="VARCHAR" property="mdCode" />
-    <result column="PARENT_ROWID" jdbcType="DECIMAL" property="parentRowid" />
+    <result column="PARENT_ROWID" jdbcType="VARCHAR" property="parentRowid" />
     <result column="SELECTED_FLAG" jdbcType="DECIMAL" property="selectedFlag" />
     <result column="MD_NEW_NAME" jdbcType="VARCHAR" property="mdNewName" />
     <result column="SHOW_SEQUENCE" jdbcType="DECIMAL" property="showSequence" />
@@ -29,16 +29,12 @@
       ACTIVE_FLAG, CREATE_DATE, CREATE_BY,LAST_UPDATE_DATE, LAST_UPDATE_BY, UPDATE_COUNT,
       ATTRIBUTE01, ATTRIBUTE02
   </sql>
-  <select id="selectModuleByParams" parameterType="java.util.Map" resultMap="BaseResultMap">
+  <select id="selectModuleByParams" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from MD_MODULE
-    where 1=1
-    <if test="parentRowid != null and parentRowid != ''">
-        and PARENT_ROWID = '${parentRowid}'
-    </if>
-    and ACTIVE_FLAG = '1'
-    ORDER BY SHOW_SEQUENCE
+    where PARENT_ROWID = #{parentRowid,jdbcType=VARCHAR} and ACTIVE_FLAG = '1'
+    ORDER BY SHOW_SEQUENCE ASC
   </select>
   <insert id="insert" parameterType="com.dhb.platform.entity.MdModule">
     insert into MD_MODULE (ROW_ID, MD_NAME, MD_CODE, 
@@ -49,7 +45,7 @@
       LAST_UPDATE_DATE, LAST_UPDATE_BY, UPDATE_COUNT, 
       ATTRIBUTE01, ATTRIBUTE02)
     values (#{rowId,jdbcType=DECIMAL}, #{mdName,jdbcType=VARCHAR}, #{mdCode,jdbcType=VARCHAR}, 
-      #{parentRowid,jdbcType=DECIMAL}, #{selectedFlag,jdbcType=DECIMAL}, #{mdNewName,jdbcType=VARCHAR}, 
+      #{parentRowid,jdbcType=VARCHAR}, #{selectedFlag,jdbcType=DECIMAL}, #{mdNewName,jdbcType=VARCHAR}, 
       #{showSequence,jdbcType=DECIMAL}, #{mdUrl,jdbcType=VARCHAR}, #{isSystemMd,jdbcType=DECIMAL}, 
       #{haveChild,jdbcType=DECIMAL}, #{intranetFlag,jdbcType=DECIMAL}, #{oasysFlag,jdbcType=DECIMAL}, 
       #{activeFlag,jdbcType=DECIMAL}, #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=VARCHAR}, 
@@ -131,7 +127,7 @@
         #{mdCode,jdbcType=VARCHAR},
       </if>
       <if test="parentRowid != null">
-        #{parentRowid,jdbcType=DECIMAL},
+        #{parentRowid,jdbcType=VARCHAR},
       </if>
       <if test="selectedFlag != null">
         #{selectedFlag,jdbcType=DECIMAL},

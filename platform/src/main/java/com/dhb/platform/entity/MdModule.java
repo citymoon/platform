@@ -10,7 +10,7 @@ public class MdModule {
 
     private String mdCode;
 
-    private Long parentRowid;
+    private String parentRowid;
 
     private BigDecimal selectedFlag;
 
@@ -68,11 +68,11 @@ public class MdModule {
         this.mdCode = mdCode == null ? null : mdCode.trim();
     }
 
-    public Long getParentRowid() {
+    public String getParentRowid() {
         return parentRowid;
     }
 
-    public void setParentRowid(Long parentRowid) {
+    public void setParentRowid(String parentRowid) {
         this.parentRowid = parentRowid;
     }
 

@@ -1,13 +1,13 @@
 package com.dhb.platform.controller;
 
+import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.dhb.platform.entity.MdModule;
 import com.dhb.platform.service.IMdModuleService;
@@ -19,11 +19,15 @@ public class MdModuleController {
     @Resource
     IMdModuleService mdModuleService;
     
-    @ResponseBody
-    @RequestMapping("/getAll")
-    public Map<String, List<MdModule>> getAllModule(){
-        Map<String, List<MdModule>> modules = mdModuleService.getAllModule();
-        return modules;
+    @RequestMapping("/moduleIndex")
+    public ModelAndView getModuleIndex(){
+        return getAllModule();
+    }
+    
+    @RequestMapping("/getAllModule")
+    public ModelAndView getAllModule(){
+        LinkedHashMap<String, List<MdModule>> modules = mdModuleService.getAllModule();
+        return new ModelAndView("moduleIndex","modules",modules);
     }
 
 }

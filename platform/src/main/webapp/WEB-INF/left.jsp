@@ -59,12 +59,21 @@
                         <li><a href="Page-500页面.html">page-500页面</a></li>
                     </ul>
                 </li>
-            <li><div class="link"><i class="fa fa-camera"></i>相册<i class="fa fa-chevron-down"></i></div>
+                <li><div class="link"><i class="fa fa-camera"></i>相册<i class="fa fa-chevron-down"></i></div>
                     <ul class="submenu">
                         <li><a href="相册-图片切换.html">图片切换</a></li>
                         <li><a href="相册-基本图库.html">基本相册</a></li>
                     </ul>
-                </li>               
+                </li> 
+                <c:forEach var="map" items="${modules}">
+	                <li><div class="link"><i class="fa fa-camera"></i>${map.key }<i class="fa fa-chevron-down"></i></div>
+	                    <ul class="submenu">
+	                    <c:forEach var="module" items="${map.value}">
+	                        <li><a href="${ctx}/${module.mdUrl}">${module.mdName }</a></li>
+	                    </c:forEach>
+	                    </ul>
+	                </li> 
+                </c:forEach>              
             </ul>
         </nav>
         <!---左侧导航结束---> 

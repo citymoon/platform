@@ -4,9 +4,11 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.jasper.tagplugins.jstl.core.Redirect;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dhb.platform.entity.JbdpUser;
@@ -37,7 +39,7 @@ public class LoginController {
 	@RequestMapping("/loginto")
 	public ModelAndView valideLogin(Model model){
 		String loginPageUrl = "index";
-		String successPageUrl = "moduleIndex";
+		String successPageUrl = "success";
 		
 		String uname = request.getParameter("userId");
 		String upasswd = request.getParameter("password");
@@ -61,7 +63,8 @@ public class LoginController {
 			}else{ 
 				//jdbcTemplate
 				//return new ModelAndView(successPageUrl,"users",service.getAllUsers());
-				return new ModelAndView(successPageUrl,"users",service.getAllUsersByMybatis());
+//				return new ModelAndView(successPageUrl,"users",service.getAllUsersByMybatis());
+			    return new ModelAndView(successPageUrl);
 			}
 		}
 	}
