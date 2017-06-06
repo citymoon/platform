@@ -20,127 +20,18 @@
     <result column="ATTRIBUTE03" jdbcType="DECIMAL" property="attribute03" />
     <result column="ATTRIBUTE04" jdbcType="DECIMAL" property="attribute04" />
   </resultMap>
-  <insert id="insert" parameterType="com.dhb.platform.entity.OaConfigTab">
-    insert into OA_CONFIG_TAB (ROW_ID, SYS_WEB_PATH, SYS_UPLOAD_PATH, 
+  <sql id="Base_Column_List">
+      ROW_ID, SYS_WEB_PATH, SYS_UPLOAD_PATH, 
       MAIL_SERVER_IP, MAIL_SERVER_PORT, WEB_MASTER_MAIL, 
       SYS_URL, UPLOAD_FILE_LENGTH, CREATE_DATE, 
       CREATE_BY, LAST_UPDATE_DATE, LAST_UPDATE_BY, 
       UPDATE_COUNT, ATTRIBUTE01, ATTRIBUTE02, 
-      ATTRIBUTE03, ATTRIBUTE04)
-    values (#{rowId,jdbcType=DECIMAL}, #{sysWebPath,jdbcType=VARCHAR}, #{sysUploadPath,jdbcType=VARCHAR}, 
-      #{mailServerIp,jdbcType=VARCHAR}, #{mailServerPort,jdbcType=DECIMAL}, #{webMasterMail,jdbcType=VARCHAR}, 
-      #{sysUrl,jdbcType=VARCHAR}, #{uploadFileLength,jdbcType=DECIMAL}, #{createDate,jdbcType=TIMESTAMP}, 
-      #{createBy,jdbcType=VARCHAR}, #{lastUpdateDate,jdbcType=TIMESTAMP}, #{lastUpdateBy,jdbcType=VARCHAR}, 
-      #{updateCount,jdbcType=DECIMAL}, #{attribute01,jdbcType=VARCHAR}, #{attribute02,jdbcType=VARCHAR}, 
-      #{attribute03,jdbcType=DECIMAL}, #{attribute04,jdbcType=DECIMAL})
-  </insert>
-  <insert id="insertSelective" parameterType="com.dhb.platform.entity.OaConfigTab">
-    insert into OA_CONFIG_TAB
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="rowId != null">
-        ROW_ID,
-      </if>
-      <if test="sysWebPath != null">
-        SYS_WEB_PATH,
-      </if>
-      <if test="sysUploadPath != null">
-        SYS_UPLOAD_PATH,
-      </if>
-      <if test="mailServerIp != null">
-        MAIL_SERVER_IP,
-      </if>
-      <if test="mailServerPort != null">
-        MAIL_SERVER_PORT,
-      </if>
-      <if test="webMasterMail != null">
-        WEB_MASTER_MAIL,
-      </if>
-      <if test="sysUrl != null">
-        SYS_URL,
-      </if>
-      <if test="uploadFileLength != null">
-        UPLOAD_FILE_LENGTH,
-      </if>
-      <if test="createDate != null">
-        CREATE_DATE,
-      </if>
-      <if test="createBy != null">
-        CREATE_BY,
-      </if>
-      <if test="lastUpdateDate != null">
-        LAST_UPDATE_DATE,
-      </if>
-      <if test="lastUpdateBy != null">
-        LAST_UPDATE_BY,
-      </if>
-      <if test="updateCount != null">
-        UPDATE_COUNT,
-      </if>
-      <if test="attribute01 != null">
-        ATTRIBUTE01,
-      </if>
-      <if test="attribute02 != null">
-        ATTRIBUTE02,
-      </if>
-      <if test="attribute03 != null">
-        ATTRIBUTE03,
-      </if>
-      <if test="attribute04 != null">
-        ATTRIBUTE04,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="rowId != null">
-        #{rowId,jdbcType=DECIMAL},
-      </if>
-      <if test="sysWebPath != null">
-        #{sysWebPath,jdbcType=VARCHAR},
-      </if>
-      <if test="sysUploadPath != null">
-        #{sysUploadPath,jdbcType=VARCHAR},
-      </if>
-      <if test="mailServerIp != null">
-        #{mailServerIp,jdbcType=VARCHAR},
-      </if>
-      <if test="mailServerPort != null">
-        #{mailServerPort,jdbcType=DECIMAL},
-      </if>
-      <if test="webMasterMail != null">
-        #{webMasterMail,jdbcType=VARCHAR},
-      </if>
-      <if test="sysUrl != null">
-        #{sysUrl,jdbcType=VARCHAR},
-      </if>
-      <if test="uploadFileLength != null">
-        #{uploadFileLength,jdbcType=DECIMAL},
-      </if>
-      <if test="createDate != null">
-        #{createDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createBy != null">
-        #{createBy,jdbcType=VARCHAR},
-      </if>
-      <if test="lastUpdateDate != null">
-        #{lastUpdateDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="lastUpdateBy != null">
-        #{lastUpdateBy,jdbcType=VARCHAR},
-      </if>
-      <if test="updateCount != null">
-        #{updateCount,jdbcType=DECIMAL},
-      </if>
-      <if test="attribute01 != null">
-        #{attribute01,jdbcType=VARCHAR},
-      </if>
-      <if test="attribute02 != null">
-        #{attribute02,jdbcType=VARCHAR},
-      </if>
-      <if test="attribute03 != null">
-        #{attribute03,jdbcType=DECIMAL},
-      </if>
-      <if test="attribute04 != null">
-        #{attribute04,jdbcType=DECIMAL},
-      </if>
-    </trim>
-  </insert>
+      ATTRIBUTE03, ATTRIBUTE04
+  </sql>
+  <select id="selectOaConfig" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from OA_CONFIG_TAB 
+    ORDER BY ROW_ID DESC LIMIT 1
+  </select>
 </mapper>
