@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<%@ include file="../../common.jsp" %>
+<%@ include file="/common.jsp" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
-    <%@ include file="../common.jsp" %>
+    <%@ include file="/commonhead.jsp" %>
     <style type="text/css">
          body{background: #f7f7f7; color: #676a6c;}
       </style>
