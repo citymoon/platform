@@ -4,7 +4,7 @@
             <div class="brand"><img src="${ctx}/resources/images/logo.png" /></div>          
             <ul id="accordion" class="accordion"> 
                 <c:forEach var="map" items="${model.modules}">
-	                <li><div class="link"><i class="fa fa-camera"></i>${map.key }<i class="fa fa-chevron-down"></i></div>
+	                <li id="mainmenu"><div class="link"><i class="fa fa-camera"></i>${map.key }<i class="fa fa-chevron-down"></i></div>
 	                    <ul class="submenu">
 	                    <c:forEach var="module" items="${map.value}">
 	                        <li><a href="${ctx}/${module.mdUrl}">${module.mdName }</a></li>
