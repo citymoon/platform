@@ -1,15 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<%@ include file="/common.jsp" %>
-<!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <%@ include file="/commonhead.jsp" %>
-  </head>
-<body>
-<div id="wrapper">
-    <%@ include file="/left.jsp" %>
-    <%@ include file="/top.jsp" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
     <!---右侧主要内容开始--->
     <div id="mian">   
         <div class="page-title">
@@ -29,6 +18,3 @@
           <div class="clearfix"></div>
         </div>
     </div>
-</div>
-</body>
-</html>

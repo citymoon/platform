@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -20,14 +21,15 @@ public class MdModuleController {
     IMdModuleService mdModuleService;
     
     @RequestMapping("/moduleIndex")
-    public ModelAndView getModuleIndex(){
-        return getAllModule();
+    public ModelAndView getModuleIndex(Model model){
+        return getAllModule(model);
     }
     
     @RequestMapping("/getAllModule")
-    public ModelAndView getAllModule(){
+    public ModelAndView getAllModule(Model model){
         LinkedHashMap<String, List<MdModule>> modules = mdModuleService.getAllModule();
-        return new ModelAndView("moduleIndex","modules",modules);
+        model.addAttribute("modules",modules);
+        return new ModelAndView("moduleIndex","model",model);
     }
 
 }
