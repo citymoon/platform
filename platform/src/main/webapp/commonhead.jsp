@@ -37,11 +37,9 @@
 			function() {
 				$('#mainmenu').find('a').each(
 						function() {
-							//alert(this.href == document.location.href || document.location.href.search(this.href));
 							if (this.href == document.location.href
 									|| document.location.href
 											.search(this.href) >= 0) {
-								//alert($(this).parents("ul").css('display'));
 								$(this).parents("ul").css('display','block');
 							}
 						});
