@@ -5,6 +5,37 @@
 <html lang="zh-CN">
 <head>
 <%@ include file="/commonhead.jsp"%>
+<script type="text/javascript">
+$(document).ready(function() {
+		$('#mainmenu').find('a').each(function() {
+			if (this.href == document.location.href
+					|| document.location.href
+							.search(this.href) >= 0) {
+				$(this).parents("ul").css('display',
+						'block');
+			}
+	    });
+		$('#conSub').click(function(){
+			$("#conForm").submitForm({
+	            url: "/Document/SubmitDocumentCreate",
+	            dataType: "text",
+	            callback: function (data) {
+	                endFileUpload();
+	                data = eval("(" + data + ")");
+	                alert(data.Content);
+	                if (data.Result > 0) {
+	                    location.href = data.Redirect;
+	                }
+	            },
+	            before: function () {
+	                //startFileUpload();
+	                var errMsg = "";
+	            }
+	        }).submit();
+		});
+});
+</script>
+
 </head>
 <body>
 	<div id="wrapper">
@@ -19,78 +50,73 @@
 		<!---右侧主要内容开始--->
 		<div id="mian">
 			<div class="row">
-				<div class="col-md-6 col-sm-6 col-sx-12">
+				<div class="col-md-12 col-sm-12 col-sx-12">
 					<ul class="nav nav-tabs">
-						<li class="left-title"><span class="h1">Form表单一般元素</span></li>
-						<li class="active"><a href="#one" data-toggle="tab">第一个选项卡</a></li>
-						<li><a href="#two" data-toggle="tab">第二个选项卡</a></li>
-						<li><a href="#three" data-toggle="tab">第三个选项卡</a></li>
+						<li class="active pull-left"><a href="#one" data-toggle="tab">第一个选项卡</a></li>
+						<li class="pull-left"><a href="#two" data-toggle="tab">第二个选项卡</a></li>
+						<li class="pull-left"><a href="#three" data-toggle="tab">第三个选项卡</a></li>
 					</ul>
 					<div class="tab-content">
 						<div class="tab-pane active" id="one">
 							<div class="pane-body">
-								<div class="col-md-12 col-sx-12">
-									<div class="x_panel">
-											<form action="" class="form-horizontal">
-												<div class=" form-group">
-													<label class="col-sm-3 control-label">用户名：*</label>
-													<div class="col-sm-6">
-														<input type="text" class="form-control" id="inputEmail3"
-															placeholder="username">
-													</div>
-												</div>
-
-												<div class=" form-group">
-													<label class="col-sm-3 control-label">密码：*</label>
-													<div class="col-sm-6">
-														<input type="password" class="form-control"
-															id="inputEmail3" placeholder="password">
-													</div>
-												</div>
-												<div class=" form-group">
-													<label class="col-sm-3 control-label">爱好：*</label>
-													<div class="col-sm-6">
-														<div class="checkbox">
-															<label class="checkbox-inline"> <input
-																type="checkbox" value="">文艺
-															</label> <label class="checkbox-inline"> <input
-																type="checkbox" value="">文艺
-															</label> <label class="checkbox-inline"> <input
-																type="checkbox" value="">音乐
-															</label> <label class="checkbox-inline"> <input
-																type="checkbox" value="">体育
-															</label>
-														</div>
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="col-sm-3 control-label">姓别：*</label>
-													<div class="col-sm-6">
-														<div class="radio">
-															<label class="radio-inline"> <input type="radio"
-																name=" " id="" value="sex">男
-															</label> <label class="radio-inline"> <input type="radio"
-																name=" " id="" value="sex">女
-															</label>
-														</div>
-													</div>
-												</div>
-
-												<div class=" form-group">
-													<label class="col-sm-3 control-label">留言：*</label>
-													<div class="col-sm-6">
-														<textarea placeholder="Text input" class="form-control"
-															rows="3"></textarea>
-														<p class="help-block">Example block-level help text
-															here.</p>
-														<button type="button" class="btn btn-success">取消</button>
-														<button type="submit" class="btn btn-success">重置</button>
-														<button type="submit" class="btn btn-primary">确定</button>
-													</div>
-												</div>
-											</form>
+								<form action="" class="form-horizontal" id="conForm">
+									<div class=" form-group">
+										<label class="col-sm-3 control-label">系统名称：*</label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" id="sysName">
+										</div>
 									</div>
-								</div>
+
+									<div class=" form-group">
+										<label class="col-sm-3 control-label">系统WEB绝对路径：*</label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" id="sysWebPath"
+												value="${oaConfigTab.sysWebPath }">
+										</div>
+									</div>
+									<div class=" form-group">
+										<label class="col-sm-3 control-label">系统上传相对路径：*</label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" id="sysUploadPath"
+												value="${oaConfigTab.sysUploadPath }">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label">管理员邮箱：*</label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" id="webMasterMail"
+												value="${oaConfigTab.webMasterMail }">
+										</div>
+									</div>
+
+									<div class=" form-group">
+										<label class="col-sm-3 control-label">邮件服务器：*</label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" id="mailServerIp"
+												value="${oaConfigTab.mailServerIp }">
+										</div>
+									</div>
+									<div class=" form-group">
+										<label class="col-sm-3 control-label">系统访问URL：*</label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" id="sysUrl"
+												value="${oaConfigTab.sysUrl }">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-5 control-label"></label>
+										<button type="button" class="btn btn-success" id="conSub">提交</button>
+										<button type="button" class="btn btn-warning" id="conRes">重置</button>
+									</div>
+									<div>
+										<span class="help-block"><p
+												class="lead text-left small">
+												说明： <br> OA系统WEB物理目录为本系统所在的实际路径。 <br>
+												文件上传的相对目录是指本系统中的上传文件所存放的目录，必须是从OA系统WEB物理路径开始的目录，且文件上传的相对目录必须以“/”开头。<br>
+												系统访问的URL为本系统的访问路径。
+											</p></span>
+									</div>
+								</form>
 							</div>
 						</div>
 						<div class="tab-pane" id="two">

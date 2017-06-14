@@ -32,16 +32,3 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="${ctx}/resources/bootstrap/js/bootstrap.min.js"></script>
 <script src="${ctx}/resources/js/index.js"></script>
-<script type="text/javascript">
-	$(document).ready(
-			function() {
-				$('#mainmenu').find('a').each(
-						function() {
-							if (this.href == document.location.href
-									|| document.location.href
-											.search(this.href) >= 0) {
-								$(this).parents("ul").css('display','block');
-							}
-						});
-			});
-</script>
