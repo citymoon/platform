@@ -16,22 +16,23 @@ $(document).ready(function() {
 			}
 	    });
 		$('#conSub').click(function(){
-			$("#conForm").submitForm({
-	            url: "/Document/SubmitDocumentCreate",
+			alert("ok");
+/* 			$("#conForm").submitForm({
+	            url: "/sysconf/update",
 	            dataType: "text",
 	            callback: function (data) {
-	                endFileUpload();
+	                //endFileUpload();
 	                data = eval("(" + data + ")");
 	                alert(data.Content);
-	                if (data.Result > 0) {
-	                    location.href = data.Redirect;
-	                }
+	                //if (data.Result > 0) {
+	                    //location.href = data.Redirect;
+	                //}
 	            },
 	            before: function () {
 	                //startFileUpload();
 	                var errMsg = "";
 	            }
-	        }).submit();
+	        }).submit(); */
 		});
 });
 </script>
@@ -60,6 +61,7 @@ $(document).ready(function() {
 						<div class="tab-pane active" id="one">
 							<div class="pane-body">
 								<form action="" class="form-horizontal" id="conForm">
+								    <input type="hidden" id="rowId" name="rowId" value="${oaConfigTab.rowId }">
 									<div class=" form-group">
 										<label class="col-sm-3 control-label">系统名称：*</label>
 										<div class="col-sm-6">

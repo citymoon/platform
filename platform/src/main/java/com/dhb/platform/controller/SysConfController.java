@@ -34,5 +34,10 @@ public class SysConfController {
         model.addAttribute("oaConfigTab",oaConfigTab);
         return new ModelAndView("sysconf/firstIndex", "model", model);
     }
+    
+    @RequestMapping("/update")
+    public ModelAndView updSysConf(){
+        return new ModelAndView("sysconf/firstIndex","message", "welcome,Hello World...............!");
+    }
 
 }
