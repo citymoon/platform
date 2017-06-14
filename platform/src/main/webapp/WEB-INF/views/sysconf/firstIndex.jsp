@@ -16,23 +16,15 @@ $(document).ready(function() {
 			}
 	    });
 		$('#conSub').click(function(){
-			alert("ok");
-/* 			$("#conForm").submitForm({
-	            url: "/sysconf/update",
-	            dataType: "text",
-	            callback: function (data) {
-	                //endFileUpload();
-	                data = eval("(" + data + ")");
-	                alert(data.Content);
-	                //if (data.Result > 0) {
-	                    //location.href = data.Redirect;
-	                //}
-	            },
-	            before: function () {
-	                //startFileUpload();
-	                var errMsg = "";
-	            }
-	        }).submit(); */
+			alert($("#conForm").serializeArray());
+			$.ajax({
+				type:'POST',
+				datatype:'text',
+				url:"<%=ctxpath%>/sysconf/update",
+				data:$("#conForm").serializeArray(),
+				contentType:"application/x-www-form-urlencoded",
+				success:function(mess){}
+			})
 		});
 });
 </script>
@@ -60,7 +52,7 @@ $(document).ready(function() {
 					<div class="tab-content">
 						<div class="tab-pane active" id="one">
 							<div class="pane-body">
-								<form action="" class="form-horizontal" id="conForm">
+								<form action="" class="form-horizontal" id="conForm" method="post">
 								    <input type="hidden" id="rowId" name="rowId" value="${oaConfigTab.rowId }">
 									<div class=" form-group">
 										<label class="col-sm-3 control-label">系统名称：*</label>
@@ -72,21 +64,21 @@ $(document).ready(function() {
 									<div class=" form-group">
 										<label class="col-sm-3 control-label">系统WEB绝对路径：*</label>
 										<div class="col-sm-6">
-											<input type="text" class="form-control" id="sysWebPath"
+											<input type="text" class="form-control" id="sysWebPath" name="sysWebPath"
 												value="${oaConfigTab.sysWebPath }">
 										</div>
 									</div>
 									<div class=" form-group">
 										<label class="col-sm-3 control-label">系统上传相对路径：*</label>
 										<div class="col-sm-6">
-											<input type="text" class="form-control" id="sysUploadPath"
+											<input type="text" class="form-control" id="sysUploadPath" name="sysUploadPath"
 												value="${oaConfigTab.sysUploadPath }">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label">管理员邮箱：*</label>
 										<div class="col-sm-6">
-											<input type="text" class="form-control" id="webMasterMail"
+											<input type="text" class="form-control" id="webMasterMail" name="webMasterMail"
 												value="${oaConfigTab.webMasterMail }">
 										</div>
 									</div>
@@ -94,20 +86,20 @@ $(document).ready(function() {
 									<div class=" form-group">
 										<label class="col-sm-3 control-label">邮件服务器：*</label>
 										<div class="col-sm-6">
-											<input type="text" class="form-control" id="mailServerIp"
+											<input type="text" class="form-control" id="mailServerIp" name="mailServerIp"
 												value="${oaConfigTab.mailServerIp }">
 										</div>
 									</div>
 									<div class=" form-group">
 										<label class="col-sm-3 control-label">系统访问URL：*</label>
 										<div class="col-sm-6">
-											<input type="text" class="form-control" id="sysUrl"
+											<input type="text" class="form-control" id="sysUrl" name="sysUrl"
 												value="${oaConfigTab.sysUrl }">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-5 control-label"></label>
-										<button type="button" class="btn btn-success" id="conSub">提交</button>
+										<button type="submit" class="btn btn-success" id="conSub">提交</button>
 										<button type="button" class="btn btn-warning" id="conRes">重置</button>
 									</div>
 									<div>

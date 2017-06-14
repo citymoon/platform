@@ -4,6 +4,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
@@ -36,7 +38,9 @@ public class SysConfController {
     }
     
     @RequestMapping("/update")
-    public ModelAndView updSysConf(){
+    public ModelAndView updSysConf(OaConfigTab oct){
+    	OaConfigTab oaConfigTab = oct;
+    	System.out.println(oaConfigTab.getSysWebPath());
         return new ModelAndView("sysconf/firstIndex","message", "welcome,Hello World...............!");
     }
 
