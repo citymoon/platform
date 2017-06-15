@@ -7,25 +7,24 @@
 <%@ include file="/commonhead.jsp"%>
 <script type="text/javascript">
 $(document).ready(function() {
-		$('#mainmenu').find('a').each(function() {
-			if (this.href == document.location.href
-					|| document.location.href
-							.search(this.href) >= 0) {
-				$(this).parents("ul").css('display',
-						'block');
-			}
-	    });
-		$('#conSub').click(function(){
-			alert($("#conForm").serializeArray());
-			$.ajax({
-				type:'POST',
-				datatype:'text',
-				url:"<%=ctxpath%>/sysconf/update",
-				data:$("#conForm").serializeArray(),
-				contentType:"application/x-www-form-urlencoded",
-				success:function(mess){}
-			})
-		});
+	$('#mainmenu').find('a').each(function() {
+		if (this.href == document.location.href
+				|| document.location.href
+						.search(this.href) >= 0) {
+			$(this).parents("ul").css('display',
+					'block');
+		}
+    });
+	$('#conSub').click(function(){
+		$.ajax({
+			type:'POST',
+			datatype:'text',
+			url:"<%=ctxpath%>/sysconf/update",
+			data:$("#conForm").serialize(),
+			//contentType:"application/x-www-form-urlencoded",
+			success:function(){alert('ok');}
+		})
+	});
 });
 </script>
 
@@ -57,7 +56,7 @@ $(document).ready(function() {
 									<div class=" form-group">
 										<label class="col-sm-3 control-label">系统名称：*</label>
 										<div class="col-sm-6">
-											<input type="text" class="form-control" id="sysName">
+											<input type="text" class="form-control" id="sysName" name="sysName" value="${sysCompName }">
 										</div>
 									</div>
 
