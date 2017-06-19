@@ -49,7 +49,6 @@ public class SysConfController {
     
     @RequestMapping("/update")
     public ModelAndView updSysConf(HttpServletRequest request,OaConfigTab oct){
-    	OaConfigTab oaConfigTab = oct;
     	String rowId = oct.getRowId().toString();
     	String sysCompName = request.getParameter("sysName");
     	if(StringUtils.isBlank(rowId))
