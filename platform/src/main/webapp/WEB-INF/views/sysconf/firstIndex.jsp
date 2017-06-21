@@ -11,6 +11,7 @@ $(document).ready(function() {
 		if (this.href == document.location.href
 				|| document.location.href
 						.search(this.href) >= 0) {
+			//alert(true);
 			$(this).parents("ul").css('display',
 					'block');
 		}
@@ -20,9 +21,11 @@ $(document).ready(function() {
 			type:'POST',
 			datatype:'text',
 			url:"<%=ctxpath%>/sysconf/update",
-			data:$("#conForm").serialize(),
+			data : $("#conForm").serialize(),
 			//contentType:"application/x-www-form-urlencoded",
-			success:function(){alert('ok');}
+			success : function() {
+			    alert('ok');
+			}
 		})
 	});
 });
@@ -51,49 +54,52 @@ $(document).ready(function() {
 					<div class="tab-content">
 						<div class="tab-pane active" id="one">
 							<div class="pane-body">
-								<form action="" class="form-horizontal" id="conForm" method="post">
-								    <input type="hidden" id="rowId" name="rowId" value="${oaConfigTab.rowId }">
+								<form action="" class="form-horizontal" id="conForm"
+									method="post">
+									<input type="hidden" id="rowId" name="rowId"
+										value="${oaConfigTab.rowId }">
 									<div class=" form-group">
 										<label class="col-sm-3 control-label">系统名称：*</label>
 										<div class="col-sm-6">
-											<input type="text" class="form-control" id="sysName" name="sysName" value="${sysCompName }">
+											<input type="text" class="form-control" id="sysName"
+												name="sysName" value="${sysCompName }">
 										</div>
 									</div>
 
 									<div class=" form-group">
 										<label class="col-sm-3 control-label">系统WEB绝对路径：*</label>
 										<div class="col-sm-6">
-											<input type="text" class="form-control" id="sysWebPath" name="sysWebPath"
-												value="${oaConfigTab.sysWebPath }">
+											<input type="text" class="form-control" id="sysWebPath"
+												name="sysWebPath" value="${oaConfigTab.sysWebPath }">
 										</div>
 									</div>
 									<div class=" form-group">
 										<label class="col-sm-3 control-label">系统上传相对路径：*</label>
 										<div class="col-sm-6">
-											<input type="text" class="form-control" id="sysUploadPath" name="sysUploadPath"
-												value="${oaConfigTab.sysUploadPath }">
+											<input type="text" class="form-control" id="sysUploadPath"
+												name="sysUploadPath" value="${oaConfigTab.sysUploadPath }">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label">管理员邮箱：*</label>
 										<div class="col-sm-6">
-											<input type="text" class="form-control" id="webMasterMail" name="webMasterMail"
-												value="${oaConfigTab.webMasterMail }">
+											<input type="text" class="form-control" id="webMasterMail"
+												name="webMasterMail" value="${oaConfigTab.webMasterMail }">
 										</div>
 									</div>
 
 									<div class=" form-group">
 										<label class="col-sm-3 control-label">邮件服务器：*</label>
 										<div class="col-sm-6">
-											<input type="text" class="form-control" id="mailServerIp" name="mailServerIp"
-												value="${oaConfigTab.mailServerIp }">
+											<input type="text" class="form-control" id="mailServerIp"
+												name="mailServerIp" value="${oaConfigTab.mailServerIp }">
 										</div>
 									</div>
 									<div class=" form-group">
 										<label class="col-sm-3 control-label">系统访问URL：*</label>
 										<div class="col-sm-6">
-											<input type="text" class="form-control" id="sysUrl" name="sysUrl"
-												value="${oaConfigTab.sysUrl }">
+											<input type="text" class="form-control" id="sysUrl"
+												name="sysUrl" value="${oaConfigTab.sysUrl }">
 										</div>
 									</div>
 									<div class="form-group">
@@ -102,22 +108,131 @@ $(document).ready(function() {
 										<button type="button" class="btn btn-warning" id="conRes">重置</button>
 									</div>
 									<div>
-										<span class="help-block"><p
-												class="lead text-left small">
+										<span class="help-block">
+										<p class="lead text-left small">
 												说明： <br> OA系统WEB物理目录为本系统所在的实际路径。 <br>
 												文件上传的相对目录是指本系统中的上传文件所存放的目录，必须是从OA系统WEB物理路径开始的目录，且文件上传的相对目录必须以“/”开头。<br>
 												系统访问的URL为本系统的访问路径。
-											</p></span>
+										</p></span>
 									</div>
 								</form>
 							</div>
 						</div>
 						<div class="tab-pane" id="two">
 							<div class="pane-body">
-								<h5>移动设备优先</h5>
-								<p>在 Bootstrap2 中，我们对框架中的某些关键部分增加了对移动设备友好的样式。而在 Bootstrap 3
-									中，我们重写了整个框架，使其一开始就是对移动设备友好的。这次不是简单的增加一些可选的针对移动设备的样式，而是直接融合进了框架的内核中。也就是说，Bootstrap
-									是移动设备优先的。针对移动设备的样式融合进了框架的每个角落，而不是增加一个额外的文件。
+								<div class="table-responsive">
+									<table class="table table-hover table-striped x-table">
+										<thead class="x-table-heading">
+											<tr>
+												<th>顺序号</th>
+												<th>模块名称</th>
+												<th>模块原名</th>
+												<th>模块编码</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><label> <input class="demo--checkbox"
+														type="checkbox" name=" ">     <span
+														class="demo--checkboxInput"></span>
+												</label></td>
+												<td>米莫说｜MiMO Show</td>
+												<td>Otto</td>
+												<td>20%</td>
+												<td>2014.11.11</td>
+												<td>View</td>
+											</tr>
+											<tr>
+												<td><label> <input class="demo--checkbox"
+														type="checkbox" name=" ">     <span
+														class="demo--checkboxInput"></span>
+												</label></td>
+												<td>米莫说｜MiMO Show</td>
+												<td>Otto</td>
+												<td>20%</td>
+												<td>2014.11.11</td>
+												<td>View</td>
+											</tr>
+											<tr>
+												<td><label> <input class="demo--checkbox"
+														type="checkbox" name=" ">     <span
+														class="demo--checkboxInput"></span>
+												</label></td>
+												<td>米莫说｜MiMO Show</td>
+												<td>Otto</td>
+												<td>20%</td>
+												<td>2014.11.11</td>
+												<td>View</td>
+											</tr>
+											<tr>
+												<td><label> <input class="demo--checkbox"
+														type="checkbox" name=" ">     <span
+														class="demo--checkboxInput"></span>
+												</label></td>
+												<td>米莫说｜MiMO Show</td>
+												<td>Otto</td>
+												<td>20%</td>
+												<td>2014.11.11</td>
+												<td>View</td>
+											</tr>
+											<tr>
+												<td><label> <input class="demo--checkbox"
+														type="checkbox" name=" ">     <span
+														class="demo--checkboxInput"></span>
+												</label></td>
+												<td>米莫说｜MiMO Show</td>
+												<td>Otto</td>
+												<td>20%</td>
+												<td>2014.11.11</td>
+												<td>View</td>
+											</tr>
+											<tr>
+												<td><label> <input class="demo--checkbox"
+														type="checkbox" name=" ">     <span
+														class="demo--checkboxInput"></span>
+												</label></td>
+												<td>米莫说｜MiMO Show</td>
+												<td>Otto</td>
+												<td>20%</td>
+												<td>2014.11.11</td>
+												<td>View</td>
+											</tr>
+											<tr>
+												<td><label> <input class="demo--checkbox"
+														type="checkbox" name=" ">     <span
+														class="demo--checkboxInput"></span>
+												</label></td>
+												<td>米莫说｜MiMO Show</td>
+												<td>Otto</td>
+												<td>20%</td>
+												<td>2014.11.11</td>
+												<td>View</td>
+											</tr>
+											<tr>
+												<td><label> <input class="demo--checkbox"
+														type="checkbox" name=" ">     <span
+														class="demo--checkboxInput"></span>
+												</label></td>
+												<td>米莫说｜MiMO Show</td>
+												<td>Otto</td>
+												<td>20%</td>
+												<td>2014.11.11</td>
+												<td>View</td>
+											</tr>
+											<tr>
+												<td><label> <input class="demo--checkbox"
+														type="checkbox" name=" ">     <span
+														class="demo--checkboxInput"></span>
+												</label></td>
+												<td>米莫说｜MiMO Show</td>
+												<td>Otto</td>
+												<td>20%</td>
+												<td>2014.11.11</td>
+												<td>View</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
 							</div>
 						</div>
 						<div class="tab-pane" id="three">

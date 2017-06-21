@@ -59,7 +59,7 @@ public class SysConfController {
         params.put("rowId", rowId);
         params.put("sysCompName", sysCompName);
         mdSystemService.updMdSystemById(params);
-        return new ModelAndView("sysconf/firstIndex","message", "welcome,Hello World...............!");
+        return new ModelAndView("sysconf/firstIndex","message", "success!");
     }
 
 }
