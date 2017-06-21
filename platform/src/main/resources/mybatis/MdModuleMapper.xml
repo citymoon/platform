@@ -29,11 +29,21 @@
       ACTIVE_FLAG, CREATE_DATE, CREATE_BY,LAST_UPDATE_DATE, LAST_UPDATE_BY, UPDATE_COUNT,
       ATTRIBUTE01, ATTRIBUTE02
   </sql>
-  <select id="selectModuleByParams" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectModuleByParams" parameterType="java.util.Map" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from MD_MODULE
-    where PARENT_ROWID = #{parentRowid,jdbcType=VARCHAR} and ACTIVE_FLAG = '1'
+    where 1=1 
+    <if test="parentRowid != null and parentRowid != ''">
+		AND PARENT_ROWID = '${parentRowid}'
+	</if>
+    <if test="selectedFlag != null and selectedFlag != ''">
+		AND SELECTED_FLAG = '${selectedFlag}'
+	</if>
+    <if test="intranetFlag != null and intranetFlag != ''">
+		AND INTRANET_FLAG = '${intranetFlag}'
+	</if>
+	and ACTIVE_FLAG = '1'
     ORDER BY SHOW_SEQUENCE ASC
   </select>
   <insert id="insert" parameterType="com.dhb.platform.entity.MdModule">

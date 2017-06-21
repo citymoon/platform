@@ -1,6 +1,7 @@
 package com.dhb.platform.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
@@ -12,5 +13,5 @@ public interface MdModuleMapper {
 
     int insertSelective(MdModule record);
     
-    List<MdModule> selectModuleByParams(String parentRowid);
+    List<MdModule> selectModuleByParams(Map<String, Object> params);
 }

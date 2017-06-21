@@ -120,6 +120,20 @@ $(document).ready(function() {
 						</div>
 						<div class="tab-pane" id="two">
 							<div class="pane-body">
+								<div>
+									<p class="lead text-left small">以下是本系统的模块配置情况，您可以点击“重新配置”按钮重新配置系统模块。</p>
+								</div>
+								<div class="form-group">
+							      	<div class="radio">
+							      		  <label class="col-sm-11 control-label"></label>
+										  <label class="radio-inline">
+										  	<input type="radio" name="inoutlan" id="inoutlan" value="1" checked="checked">内网
+										  </label>
+										  <label class="radio-inline">
+										  	<input type="radio" name="inoutlan" id="inoutlan" value="2">外网
+										  </label>
+									</div>
+								</div>
 								<div class="table-responsive">
 									<table class="table table-hover table-striped x-table">
 										<thead class="x-table-heading">
@@ -131,107 +145,28 @@ $(document).ready(function() {
 											</tr>
 										</thead>
 										<tbody>
+										<c:forEach var="map" items="${model.modules}" varStatus="status">
 											<tr>
-												<td><label> <input class="demo--checkbox"
-														type="checkbox" name=" ">     <span
-														class="demo--checkboxInput"></span>
-												</label></td>
-												<td>米莫说｜MiMO Show</td>
-												<td>Otto</td>
-												<td>20%</td>
-												<td>2014.11.11</td>
-												<td>View</td>
+												<td><label>${status.index + 1}</label></td>
+												<td>${map.key.mdNewName }</td>
+												<td>${map.key.mdName }</td>
+												<td>${map.key.mdCode }</td>
 											</tr>
+											<c:forEach var="module" items="${map.value}" varStatus="status2">
 											<tr>
-												<td><label> <input class="demo--checkbox"
-														type="checkbox" name=" ">     <span
-														class="demo--checkboxInput"></span>
-												</label></td>
-												<td>米莫说｜MiMO Show</td>
-												<td>Otto</td>
-												<td>20%</td>
-												<td>2014.11.11</td>
-												<td>View</td>
+												<td>&nbsp;&nbsp;<label>${status.index + 1}.${status2.index + 1}</label></td>
+												<td>${module.mdNewName }</td>
+												<td>${module.mdName }</td>
+												<td>${module.mdCode }</td>
 											</tr>
-											<tr>
-												<td><label> <input class="demo--checkbox"
-														type="checkbox" name=" ">     <span
-														class="demo--checkboxInput"></span>
-												</label></td>
-												<td>米莫说｜MiMO Show</td>
-												<td>Otto</td>
-												<td>20%</td>
-												<td>2014.11.11</td>
-												<td>View</td>
-											</tr>
-											<tr>
-												<td><label> <input class="demo--checkbox"
-														type="checkbox" name=" ">     <span
-														class="demo--checkboxInput"></span>
-												</label></td>
-												<td>米莫说｜MiMO Show</td>
-												<td>Otto</td>
-												<td>20%</td>
-												<td>2014.11.11</td>
-												<td>View</td>
-											</tr>
-											<tr>
-												<td><label> <input class="demo--checkbox"
-														type="checkbox" name=" ">     <span
-														class="demo--checkboxInput"></span>
-												</label></td>
-												<td>米莫说｜MiMO Show</td>
-												<td>Otto</td>
-												<td>20%</td>
-												<td>2014.11.11</td>
-												<td>View</td>
-											</tr>
-											<tr>
-												<td><label> <input class="demo--checkbox"
-														type="checkbox" name=" ">     <span
-														class="demo--checkboxInput"></span>
-												</label></td>
-												<td>米莫说｜MiMO Show</td>
-												<td>Otto</td>
-												<td>20%</td>
-												<td>2014.11.11</td>
-												<td>View</td>
-											</tr>
-											<tr>
-												<td><label> <input class="demo--checkbox"
-														type="checkbox" name=" ">     <span
-														class="demo--checkboxInput"></span>
-												</label></td>
-												<td>米莫说｜MiMO Show</td>
-												<td>Otto</td>
-												<td>20%</td>
-												<td>2014.11.11</td>
-												<td>View</td>
-											</tr>
-											<tr>
-												<td><label> <input class="demo--checkbox"
-														type="checkbox" name=" ">     <span
-														class="demo--checkboxInput"></span>
-												</label></td>
-												<td>米莫说｜MiMO Show</td>
-												<td>Otto</td>
-												<td>20%</td>
-												<td>2014.11.11</td>
-												<td>View</td>
-											</tr>
-											<tr>
-												<td><label> <input class="demo--checkbox"
-														type="checkbox" name=" ">     <span
-														class="demo--checkboxInput"></span>
-												</label></td>
-												<td>米莫说｜MiMO Show</td>
-												<td>Otto</td>
-												<td>20%</td>
-												<td>2014.11.11</td>
-												<td>View</td>
-											</tr>
+											</c:forEach>
+										</c:forEach>
 										</tbody>
 									</table>
+								</div>
+								<div class="form-group">
+										<label class="col-sm-5 control-label"></label>
+										<button type="submit" class="btn btn-success" id="reconSub">重新配置</button>
 								</div>
 							</div>
 						</div>

@@ -7,6 +7,6 @@ import com.dhb.platform.entity.MdModule;
 
 public interface IMdModuleService {
     
-    public LinkedHashMap<String, List<MdModule>> getAllModule();
+    public LinkedHashMap<MdModule, List<MdModule>> getAllModule();
 
 }

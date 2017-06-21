@@ -38,7 +38,7 @@ public class SysConfController {
     
     @RequestMapping("/index")
     public ModelAndView getSysConf(Model model){
-        LinkedHashMap<String, List<MdModule>> modules = mdModuleService.getAllModule();
+        LinkedHashMap<MdModule, List<MdModule>> modules = mdModuleService.getAllModule();
         MdSystem mdSystem = mdSystemService.getMdSystemByOne();
         OaConfigTab oaConfigTab = oaConfigService.getOaConfigTab();
         model.addAttribute("sysCompName", mdSystem.getSysCompName());

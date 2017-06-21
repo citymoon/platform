@@ -27,7 +27,7 @@ public class MdModuleController {
     
     @RequestMapping("/getAllModule")
     public ModelAndView getAllModule(Model model){
-        LinkedHashMap<String, List<MdModule>> modules = mdModuleService.getAllModule();
+        LinkedHashMap<MdModule, List<MdModule>> modules = mdModuleService.getAllModule();
         model.addAttribute("modules",modules);
         return new ModelAndView("moduleIndex","model",model);
     }
