@@ -16,15 +16,15 @@ $(document).ready(function() {
 					'block');
 		}
     });
-	$('#conSub').click(function(){
+	$('#reconSub').click(function(){
 		$.ajax({
 			type:'POST',
 			datatype:'text',
-			url:"<%=ctxpath%>/sysconf/update",
-			data : $("#conForm").serialize(),
+			url:"<%=ctxpath%>/module/reConfig",
+			//data : $("#conForm").serialize(),
 			//contentType:"application/x-www-form-urlencoded",
 			success : function() {
-			    alert('ok');
+			    //alert('ok');
 			}
 		})
 	});
@@ -47,9 +47,8 @@ $(document).ready(function() {
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-sx-12">
 					<ul class="nav nav-tabs">
-						<li class="active pull-left"><a href="#one" data-toggle="tab">第一个选项卡</a></li>
-						<li class="pull-left"><a href="#two" data-toggle="tab">第二个选项卡</a></li>
-						<li class="pull-left"><a href="#three" data-toggle="tab">第三个选项卡</a></li>
+						<li class="active pull-left"><a href="#one" data-toggle="tab">基本信息</a></li>
+						<li class="pull-left"><a href="#two" data-toggle="tab">模块配置</a></li>
 					</ul>
 					<div class="tab-content">
 						<div class="tab-pane active" id="one">
@@ -123,7 +122,7 @@ $(document).ready(function() {
 								<div>
 									<p class="lead text-left small">以下是本系统的模块配置情况，您可以点击“重新配置”按钮重新配置系统模块。</p>
 								</div>
-								<div class="form-group">
+<!-- 								<div class="form-group">
 							      	<div class="radio">
 							      		  <label class="col-sm-11 control-label"></label>
 										  <label class="radio-inline">
@@ -133,7 +132,7 @@ $(document).ready(function() {
 										  	<input type="radio" name="inoutlan" id="inoutlan" value="2">外网
 										  </label>
 									</div>
-								</div>
+								</div> -->
 								<div class="table-responsive">
 									<table class="table table-hover table-striped x-table">
 										<thead class="x-table-heading">
@@ -170,15 +169,7 @@ $(document).ready(function() {
 								</div>
 							</div>
 						</div>
-						<div class="tab-pane" id="three">
-							<div class="pane-body">
-								<h5>3HTML5 文档类型</h5>
-								<p>Bootstrap 使用到的某些 HTML 元素和 CSS 属性需要将页面设置为 HTML5
-									文档类型。在你项目中的每个页面都要参照下面的格式进行设置。</p>
-							</div>
-						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>

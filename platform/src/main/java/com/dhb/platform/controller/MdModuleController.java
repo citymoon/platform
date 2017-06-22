@@ -31,5 +31,11 @@ public class MdModuleController {
         model.addAttribute("modules",modules);
         return new ModelAndView("moduleIndex","model",model);
     }
+    
+    @RequestMapping("/reConfig")
+    public ModelAndView reConfigModule(){
+        
+        return new ModelAndView("sysconf/moduleConfig","message","success....");
+    }
 
 }

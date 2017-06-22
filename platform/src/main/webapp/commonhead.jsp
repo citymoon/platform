@@ -32,3 +32,5 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="${ctx}/resources/bootstrap/js/bootstrap.min.js"></script>
 <script src="${ctx}/resources/js/index.js"></script>
+<script src="${ctx}/resources/holder/holder.js" type="text/javascript"></script>
+<script src='${ctx}/resources/js/jquery.js'></script>
